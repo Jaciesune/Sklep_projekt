@@ -16,7 +16,7 @@ include_once "components/nav.php";
   ?>
 
   <div class="show-product">
-    <ul class="product-list">
+    <ul>
       <?php
       while ($row = $res->fetch_object()) {
         if ($row->name == 'Kubek Satisfactory' || $row->name == 'Plakat "Satisfactory Update 5"') {
