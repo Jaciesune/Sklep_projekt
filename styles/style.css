@@ -20,6 +20,7 @@ li {
 
 a {
     text-decoration: none;
+    color: #00375c;
 }
 
 nav {
@@ -158,6 +159,17 @@ nav.open {
 
 .subtitle {
     text-align: center;
+    margin: 0rem;
+    padding-top: 2rem;
+    text-shadow: 0.5rem 0.5rem 0.7rem #00375c, 0.3rem 0.3rem 0.7rem #75E6DA;
+}
+
+.product_name {
+    text-align: center;
+    margin: 0rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-shadow: 0.3rem 0.3rem 0.4rem #F4BFDB, 0.3rem 0.3rem 0.4rem #87BAAB;
 }
 
 .product-list {
@@ -167,7 +179,7 @@ nav.open {
     width: 90%;
     align-items: stretch;
     padding-left: 12rem;
-    padding-top: 5rem;
+    padding-top: 2rem;
 }
 
 .product-list-child {
@@ -181,7 +193,6 @@ nav.open {
     padding-left: 2%;
     width: 60%;
     flex-direction: column;
-
 }
 
 .special-offer-container {
@@ -193,9 +204,11 @@ nav.open {
     display: flex;
 
 }
+
 .show-product {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     color: #05445E;
 }
 
@@ -204,3 +217,4 @@ img {
     background-color: white;
     border-radius: 0.5rem;
 }
+

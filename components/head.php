@@ -15,6 +15,7 @@ include_once "connect.php";
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+  <script src="main.js"></script>
   <title>Strona główna sklepu</title>
 </head>
 <body>

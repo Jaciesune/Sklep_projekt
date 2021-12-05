@@ -12,7 +12,7 @@
 
   </section>
   <section class="your_cart">
-    <a href="#"><span class="material-icons">
+    <a href="cart.php"><span class="material-icons">
         shopping_cart
       </span>
       Twój Koszyk</a>

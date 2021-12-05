@@ -6,6 +6,8 @@ include_once "components/nav.php";
 
 
 
+
+
 <?php
 include_once "components/foot.php";
 ?>
