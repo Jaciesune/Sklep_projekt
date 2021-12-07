@@ -14,7 +14,7 @@ function connect()
     } catch (mysqli_sql_exception){
     $db->query("CREATE DATABASE `Sklep-ln` character set utf8mb4 COLLATE utf8mb4_general_ci");
     $db->select_db("Sklep-ln");
-    $query=file_get_contents("./sklep.sql");
+    $query=file_get_contents("./sklep-ln.sql");
     $db->multi_query($query);
   };
   

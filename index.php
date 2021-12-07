@@ -22,6 +22,8 @@ include_once "components/nav.php";
   </ul>
 
 
+
+
 </main>
 
 <?php

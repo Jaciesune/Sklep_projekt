@@ -104,7 +104,7 @@ header {
     right: 0;
     top: 0;
     display: flex;
-    width: 24.5rem;
+    /* width: 24.5rem; */
 }
 
 .your_cart a .material-icons {
@@ -212,9 +212,26 @@ nav.open {
     color: #05445E;
 }
 
+#addToCart {
+    width: 5rem;
+    word-wrap: normal;
+    height: 5rem;
+}
+
 img {
     width: 24rem;
     background-color: white;
+    border-radius: 0.5rem;
+}
+
+.notification {
+    background-color: red;
+    color: wheat;
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    min-height: 1.5rem;
+    padding: 1rem;
     border-radius: 0.5rem;
 }
 

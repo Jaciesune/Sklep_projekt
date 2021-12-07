@@ -1,6 +1,18 @@
 <?php 
 include_once "connect.php";
 
+$USER_DATA=[];
+if (isset($_SESSION["userID"])) {
+  $db = connect();
+    $query="SELECT data FROM users where user_id={$_SESSION["userID"]}";
+    $res = $db->query($query);
+    $dane = $res->fetch_object()->data;
+    $USER_DATA=json_decode($dane, true);
+    if($USER_DATA==NULL){
+      $USER_DATA=[];
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -19,3 +31,6 @@ include_once "connect.php";
   <title>Strona główna sklepu</title>
 </head>
 <body>
+<?php  
+
+include_once "alert.php";

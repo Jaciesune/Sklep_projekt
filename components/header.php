@@ -12,12 +12,29 @@
 
   </section>
   <section class="your_cart">
-    <a href="cart.php"><span class="material-icons">
+    <?php
+    if (isset($_SESSION['userID'])) {
+    ?>
+      <a href="logout.php"><span class="material-icons">
+          logout
+        </span>
+        Wyloguj sie
+      </a>
+      <a href="cart.php"><span class="material-icons">
         shopping_cart
       </span>
       Twój Koszyk</a>
-    <a href="login_form.php"><span class="material-icons">
-        login
-      </span>Zaloguj się</a>
+    <?php
+    } else {
+    ?>
+      <a href="login_form.php"><span class="material-icons">
+          login
+        </span>
+        Zaloguj sie
+      </a>
+    <?php
+    }
+    ?>
+
   </section>
 </header>
