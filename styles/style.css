@@ -235,3 +235,15 @@ img {
     border-radius: 0.5rem;
 }
 
+input:invalid {
+    border-color: hotpink;
+    background-color: rgba(255, 105, 180, 0.24);
+}
+
+input:focus {
+    outline: none;
+}
+input[type="number"]:out-of-range {
+    border-color: hotpink;
+    background-color: rgba(255, 105, 180, 0.24);
+}

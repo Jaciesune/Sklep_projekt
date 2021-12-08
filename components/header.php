@@ -24,6 +24,11 @@
         shopping_cart
       </span>
       Twój Koszyk</a>
+      <a href="user_settings.php"><span class="material-icons">
+        settings
+      </span>
+      Ustawienia
+      </a>
     <?php
     } else {
     ?>
