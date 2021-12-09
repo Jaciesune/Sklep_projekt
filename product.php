@@ -25,7 +25,7 @@ include_once "components/nav.php";
       if ($row->name == 'Kubek Satisfactory' || $row->name == 'Plakat "Satisfactory Update 5"') {
         echo "<div class='product-img-container'>";
         echo "<img src='$row->picture_path' alt='obrazek produktu'>";
-        echo "<form action='./cart.php' method='POST'>";
+        echo "<form action='./cart_form.php' method='POST'>";
         echo "<input type='hidden' name='product' value='$row->product_id'>";
         echo "<input type='submit'>";
         echo "</form>";
@@ -35,7 +35,7 @@ include_once "components/nav.php";
       } else {
         echo "<div class='product-img-container'>";
         echo "<img src='$row->picture_path' alt='obrazek produktu'>";
-        echo "<form action='./cart.php' method='POST'>";
+        echo "<form action='./cart_form.php' method='POST'>";
         echo "<input type='hidden' name='product' value='$row->product_id'>";
         echo "<input type='submit' value='Dodaj do koszyka' id='addToCart'>";
         echo "</form>";

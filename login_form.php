@@ -8,7 +8,7 @@ include_once "components/nav.php";
   <div class="form">
     <form method="POST" action="login.php">
       <input type="text" name="login" placeholder="login">
-      <input type="text" name="pass" placeholder="Hasło">
+      <input type="password" name="pass" placeholder="Hasło">
       <a href="register_form.php">Nie masz konta? Zarejestruj się</a>
       <input type="submit" value="Zaloguj" class="send">
     </form>

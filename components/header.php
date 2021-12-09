@@ -20,7 +20,7 @@
         </span>
         Wyloguj sie
       </a>
-      <a href="cart.php"><span class="material-icons">
+      <a href="cart_form.php"><span class="material-icons">
         shopping_cart
       </span>
       Twój Koszyk</a>

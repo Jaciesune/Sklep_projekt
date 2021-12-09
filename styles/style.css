@@ -6,7 +6,7 @@
 
 body {
     background-color: #D4F1F4;
-    margin-top: 5rem;
+    margin-top: 7rem;
 }
 
 main {
@@ -104,7 +104,6 @@ header {
     right: 0;
     top: 0;
     display: flex;
-    /* width: 24.5rem; */
 }
 
 .your_cart a .material-icons {
@@ -246,4 +245,37 @@ input:focus {
 input[type="number"]:out-of-range {
     border-color: hotpink;
     background-color: rgba(255, 105, 180, 0.24);
+}
+
+.product_cart {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: #05445E20;
+    justify-content: space-between;
+    max-width: 60rem;
+}
+
+.product_cart button, .product_cart input {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size:large;
+    margin: 0.5rem;
+    color: azure;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #05445E;
+    width: 100%;
+    transition: 0.4s;
+    height: 4rem;
+    border: none;
+}
+
+.cart_info {
+    width: 20rem;
+    text-align: center;
 }
