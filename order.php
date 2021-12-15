@@ -14,7 +14,7 @@ foreach ($_POST['product'] as $product => $ilosc) {
   $price +=floatval($product->price)*$ilosc;
   echo $product->name . "<br>";
 }
-
+ 
 ?>
 <form id="formformform">
   <p>Sposób dostawy</p>
