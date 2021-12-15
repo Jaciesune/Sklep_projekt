@@ -3,22 +3,21 @@ include_once "components/head.php";
 include_once "components/header.php";
 include_once "components/nav.php";
 $conn = connect();
-
+if (!isset($USER_DATA['Cart'])) {
+  $USER_DATA['Cart'] = [];
+}
 if (isset($_POST['product'])) {
-  if (!isset($USER_DATA['Cart'])) {
-    $USER_DATA['Cart'] = [];
-  }
-  if (isset($_POST['delete'])) {
+  $amount = $_POST['quantity'] ?? $USER_DATA[$_POST['product']] ?? 1;
+  $USER_DATA['Cart'][$_POST['product']] = $amount;
+  if (isset($_POST['delete']) || $amount == 0) {
     unset($USER_DATA['Cart'][$_POST['product']]);
   } else {
-    $amount = $_POST['quantity'] ?? $USER_DATA[$_POST['product']] ?? 1;
     $USER_DATA['Cart'][$_POST['product']] = $amount;
   }
 }
 
 ?>
 <section class="">
-
   <?php
   foreach ($USER_DATA['Cart'] as $k => $v) {
     $q1 = "SELECT * FROM `products` WHERE product_id = '$k'";
@@ -44,7 +43,7 @@ if (isset($_POST['product'])) {
   ?>
   <form method="POST" action="order.php">
 
-    <button type="submit"> Złóż zamówienie </button>
+    <button type="submit"> Kup </button>
     <?php
     foreach ($USER_DATA['Cart'] as $k => $v) {
       echo "<input type='hidden' name='product[$k]' value='$v'>";

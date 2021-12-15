@@ -213,8 +213,13 @@ nav.open {
 
 #addToCart {
     width: 5rem;
-    word-wrap: normal;
+    white-space: normal;
+    word-wrap: break-word;
     height: 5rem;
+    border-radius: 1rem;
+    border: 0;
+    background-color: #05445E;
+    color: white;
 }
 
 img {

@@ -4,46 +4,44 @@ include_once "components/header.php";
 include_once "components/nav.php";
 $conn = connect();
 
-if (isset($_POST['product'])) {
-  if (!isset($USER_DATA['Cart'])) {
-    $USER_DATA['Cart'] = [];
-  }
-  if (isset($_POST['delete'])) {
-    unset($USER_DATA['Cart'][$_POST['product']]);
-  } else {
-    $amount = $_POST['quantity'] ?? $USER_DATA[$_POST['product']] ?? 1;
-    $USER_DATA['Cart'][$_POST['product']] = $amount;
-  }
+echo "<h1>Produkty, które kupujesz</h1>";
+
+$price = 0;
+foreach ($_POST['product'] as $product => $ilosc) {
+  $q = "SELECT name, price FROM products WHERE product_id = $product";
+  $res = $conn->query($q);
+  $product = $res->fetch_object();
+  $price +=floatval($product->price)*$ilosc;
+  echo $product->name . "<br>";
 }
 
 ?>
-<section class="">
+<form id="formformform">
+  <p>Sposób dostawy</p>
+  <input type="hidden" name="price" id="price" value="<?= $price ?>">
+  <input type="radio" name="delivery" value="8"> Kurier DHL -> 8.00 zł<br>
+  <input type="radio" name="delivery" value="6"> Dostawa do najbliższego paczkomatu -> 6.00 zł<br>
+  <input type="radio" name="delivery" value="9"> Kurier Inpost -> 9.00 zł
+  <p>Metoda płatności: </p>
+  <input type="radio" name="payment" value="Karta płatnicza"> Karta<br>
+  <input type="radio" name="payment" value="Blik"> Blik<br>
+  <input type="radio" name="payment" value="Paypal"> Paypal<br>
+  <input type="radio" name="payment" value="[Object object]"> Zbliżeniowo<br>
+  <input type="submit" value="Złóż zamówienie">
+</form>
 
-  <?php
-  foreach ($USER_DATA['Cart'] as $k => $v) {
-    $q1 = "SELECT * FROM `products` WHERE product_id = '$k'";
-    $res = $conn->query($q1);
+<script>
+  const form = document.getElementById('formformform')
 
-    $row = $res->fetch_object();
-  ?>
-    <div class="product_cart">
-      <img src="<?= $row->picture_path ?>">
-      <div class="cart_info">
-        <h3><?= $row->name ?></h3>
-
-        <form action="cart_form.php" method="POST">
-          <input type="hidden" value="<?= $row->product_id ?>" name="product">
-          <input type="number" value="<?= $v ?>" name="quantity" max="<?= $row->quantity ?>">
-          <button type="submit">Zatwierdź ilość produktów</button>
-          <button type="submit" name="delete"> Usuń produkt z koszyka </button>
-        </form>
-      </div>
-    </div>
-  <?php
-  }
-  ?>
-
-</section>
+  form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const delivery = Number(document.querySelector('input[name=delivery]:checked').value), payment = document.querySelector('input[name=payment]:checked').value, 
+      price = Number(document.getElementById('price').value)
+      const output = `Całkowita wartość zakupu: ${(delivery+price).toFixed(2)} zł, Sposób płatności: ${payment}`
+      alert(output)
+      window.location='erase_cart.php'
+  })
+</script>
 
 <?php
 include_once "components/foot.php";

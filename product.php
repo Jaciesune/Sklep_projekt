@@ -27,7 +27,7 @@ include_once "components/nav.php";
         echo "<img src='$row->picture_path' alt='obrazek produktu'>";
         echo "<form action='./cart_form.php' method='POST'>";
         echo "<input type='hidden' name='product' value='$row->product_id'>";
-        echo "<input type='submit'>";
+        echo "<input type='submit' value='Dodaj do koszyka' id='addToCart'>";
         echo "</form>";
         echo "</div>";
         echo "<p>Cena: " . substr($row->price, 0, 1) . " Kupon FICSIT</p>";
