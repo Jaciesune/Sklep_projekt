@@ -32,7 +32,7 @@ include_once "components/nav.php";
         <option value='zachodniopomorskie'>Zachodniopomorskie</option>
       </select>
       <input type="text" name="city_name" placeholder="Nazwa miasta" id="city_name" pattern="^[^0-9]+$" title="Nie może zawierać cyfr" required>
-      <input type="text" name="street_name" placeholder="Nr ulicy" id="st_nr">
+      <input type="text" name="st_nr" placeholder="Nr ulicy" id="st_nr">
       <input type="text" name="house_nr" placeholder="Numer domu" id="home_nr">
       <input type="text" name="apart_nr" placeholder="Numer mieszkania" id="apart_nr">
       <a href="login_form.php">Masz już konto? Zaloguj się</a>

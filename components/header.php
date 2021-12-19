@@ -25,7 +25,7 @@
       </span>
       Twój Koszyk</a>
       <a href="user_settings.php"><span class="material-icons">
-        settings
+        person
       </span>
       Ustawienia
       </a>

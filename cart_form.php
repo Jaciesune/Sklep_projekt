@@ -9,19 +9,19 @@ if (!isset($USER_DATA['Cart'])) {
 if (isset($_POST['product'])) {
   $amount = $_POST['quantity'] ?? $USER_DATA[$_POST['product']] ?? 1;
   $USER_DATA['Cart'][$_POST['product']] = $amount;
-  if (isset($_POST['delete']) || $amount == 0) {
+  if (isset($_POST['delete']) || $amount < 1) {
     unset($USER_DATA['Cart'][$_POST['product']]);
   } else {
     $USER_DATA['Cart'][$_POST['product']] = $amount;
   }
 }
 
-if ($USER_DATA['CArt'] = []){
+if ($USER_DATA['Cart'] == []){
   echo "<h1>Koszyk jest pusty</h1>";
 } else {
 
 ?>
-<section class="">
+<section>
   <?php
   foreach ($USER_DATA['Cart'] as $k => $v) {
     $q1 = "SELECT * FROM `products` WHERE product_id = '$k'";

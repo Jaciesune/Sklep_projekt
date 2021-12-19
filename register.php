@@ -11,7 +11,7 @@ $pass = $_POST['pass'];
 $phone_number = $_POST['phone_number'];
 $woj = $_POST['woj'];
 $city_name = $_POST['city_name'];
-$st_name = $_POST['st_name'];
+$st_name = $_POST['st_nr'];
 $house_nr = $_POST['house_nr'];
 $apart_nr = $_POST['apart_nr'];
 

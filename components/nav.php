@@ -22,10 +22,18 @@
         search
       </span>
       Szukaj</a>
-      <a href="management.php"><span class="material-icons">
-        construction
-      </span>
-      Management</a>
+    <?php
+    if (isset($_SESSION['userID'])) {
+      if ($_SESSION['admin']) {
+    ?>
+        <a href="management.php"><span class="material-icons">
+            construction
+          </span>
+          Management</a>
+    <?php
+      }
+    }
+    ?>
   </section>
 
 </nav>

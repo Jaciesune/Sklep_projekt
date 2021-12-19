@@ -18,7 +18,7 @@ $user = $res->fetch_object();
       <input type="text" name="name" placeholder="Imie" id="name" pattern="^[^0-9]+$" title="Nie może zawierać cyfr" required value="<?= $user->name ?>">
       <input type="text" name="last_name" placeholder="Nazwisko" id="last_name" pattern="^[^0-9]+$" title="Nie może zawierać cyfr" required value="<?= $user->family_name ?>">
       <input type="text" name="login" placeholder="Login" id="username" required value="<?= $user->username ?>">
-      <input type="password" name="pass" placeholder="Hasło" id="pass" minlength="8" disabled>
+      <input type="password" name="pass" placeholder="Hasło" id="pass" minlength="8">
       <input type="email" name="mail" placeholder="e-mail" id="email" required value="<?= $user->{'e-mail'} ?>">
       <input type="text" name="phone_number" placeholder="Numer telefonu" id="phone_number" pattern="^[0-9]{9}$" value="<?= $user->phone_number ?>">
       <select name="woj" id="woj" required>
