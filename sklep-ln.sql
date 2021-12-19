@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 19 Gru 2021, 23:05
+-- Czas generowania: 20 Gru 2021, 00:42
 -- Wersja serwera: 10.4.21-MariaDB
 -- Wersja PHP: 8.0.12
 
@@ -46,7 +46,15 @@ INSERT INTO `adressess` (`adress_id`, `phone_number`, `wojewodztwo`, `city_name`
 (2, 123456789, 'pomorskie', 'łoszington', '', '1234', ''),
 (3, 132456789, 'dolnośląskie', 'Krk', '', '123', '123'),
 (4, 123456789, 'dolnośląskie', 'Limanowa', '', '123', '123'),
-(5, 987654321, 'zachodniopomorskie', 'łoszington', '', '1', '123');
+(5, 987654321, 'zachodniopomorskie', 'łoszington', '', '1', '123'),
+(6, 102938475, 'dolnośląskie', 'Warszawa', '', '90', ''),
+(7, 112233445, 'warmińsko-mazurskie', 'limanowa', '', '67', '2'),
+(8, 123456789, 'wielkopolskie', 'Limanowa', '', '2', '5'),
+(9, 123123123, 'wielkopolskie', 'lim', '', '5', '1'),
+(10, 999777555, 'podkarpackie', 'Stara Wieś', '5', '67', '90'),
+(11, 111333555, 'opolskie', 'krk', '6', '1', '2'),
+(12, 333444555, 'śląskie', 'krk', '6', '777', '543'),
+(13, 333444666, 'małopolskie', 'krk', '5', '67', '9');
 
 -- --------------------------------------------------------
 
@@ -154,7 +162,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `name`, `price`, `quantity`, `category_id`, `picture_path`, `description`) VALUES
-(1, 'Sok <span style=\"text-decoration: line-through\">pomidorowy</span> pomarańczowy 0.5L', '2.99', 64, 13, './visualization/sok-pomidorowy.png', ''),
+(1, 'Sok <span style=\"text-decoration: line-through\">pomidorowy</span> pomarańczowy 0.5L', '2.99', 63, 13, './visualization/sok-pomidorowy.png', 'No generalnie to jest mem'),
 (5, 'Dell Vostro 3888 MT i5-10400/8GB/256/Win10P', '2699.00', 15, 1, './visualization/komp_1.jpg', ''),
 (6, 'Acer Nitro 50 i5-11400F/16GB/512/W10 RTX3060', '5599.00', 6, 1, './visualization/komp_1.jpg', ''),
 (7, 'G4M3R 500 i5-10400F/16GB/1TB/RTX3060/W10X\r\n', '6650.00', 2, 1, './visualization/komp_1.jpg', ''),
@@ -191,10 +199,11 @@ INSERT INTO `products` (`product_id`, `name`, `price`, `quantity`, `category_id`
 (38, 'Kingston MobileLite Plus (SD) USB 3.2 gen.1', '42.00', 7, 12, './visualization/komp_1.jpg', ''),
 (39, 'Kingston 64GB microSDXC Canvas Select Plus 100MB/s', '43.00', 9, 12, './visualization/komp_1.jpg', ''),
 (40, 'Lenovo IdeaCentre Gaming 5 i5/16GB/512/Win10 GTX1660S', '4500.00', 13, 1, './visualization/komp_1.jpg', ''),
-(41, 'Pizza 4 sery - Duża', '32.00', 6, 13, 'visualization/140d3ea2b0c7a720b8fcc236deedd04f.jpg', ''),
+(41, 'Pizza 4 sery - Duża', '32.00', 5, 13, 'visualization/140d3ea2b0c7a720b8fcc236deedd04f.jpg', ''),
 (42, 'Hamburger - MC Donlands', '12.00', 50, 13, './visualization/hamburger.jpg', ''),
 (43, 'Plakat \"Satisfactory Update 5\"', '1.00', 99900, 13, './visualization/poster-sati.webp', ''),
-(44, 'Kubek Satisfactory', '1.00', 999900, 13, './visualization/Cup.png', '');
+(44, 'Kubek Satisfactory', '1.00', 999897, 13, './visualization/Cup.png', ''),
+(54, 'test5', '45.00', 13, 13, 'visualization/e9a6d673403ba95a00750defa58203ec.jpg', 'piesek do testów, źle to brzmi ale prawdopodobnie działa');
 
 -- --------------------------------------------------------
 
@@ -219,15 +228,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `name`, `family_name`, `password`, `e-mail`, `adress`, `data`, `role`) VALUES
-(1, 'kcpru', 'Kacper', 'Kaspersky', '1', 'mail_kacpra@window.love', 1, '', 0),
-(2, 'BadAt', 'Szymuś', 'Kasza', '2', 'batat@gnu.antarktyda', 1, '', 0),
-(5, 'janiemoge', 'Lukasz', 'Nowak', '$2y$10$aT4fq3/tdmvtGWI0xQxp5.vNVswuVK3YgULWtm8majO5bF7zmNB.O', 'kocham_misie@yebac.lacznosc', 1, '', 0),
-(6, 'spadło', 'abecadło', 'z pieca', '$2y$10$seeAJNXnkLebLHgu8RgOk.yoSR0DsifkRpVSzIj27bqmH9noIh08C', 'lubie@placki.com', 1, '', 0),
-(7, 're-ken', 'Kacper', 'Chojnowski', '$2y$10$jEPzM290DAjN02hfBp8XK.NhFoApMHskKCYSi3pQt3giRV3M10D9a', 'kjyhsfdgkSFDGULYOF@gmail.com', 7, '{\"Cart\":[]}', 0),
-(8, 'mortal123', 'Lukasz', 'Nowak', '$2y$10$QURFJkauXrP3feOh3jDqn.OWKm9iOFea6Fc62HIooVj8GmukBgDay', 'lubie@placki.com', 1, '', 0),
-(9, 'kook', 'konrad', 'ol', '$2y$10$gx5PAhwa9jCr2dMwMJQ35O.cvrvyaQOdTV0oszdXwrYbl/.skHgwy', 'alllellluja@gmail.com', 0, '{\"Cart\":{\"1\":\"5\"}}', 0),
 (10, 'admin', 'John', 'Cena', '$2y$10$Ppb/1p/VYAzE2GnLUix4U.ZG9wmtki0lxyofZYBfCbOtYdvtzRCEW', 'who.knows@gmail.com', 1, '[]', 1),
-(12, 'łosoś', 'Katarzyna', 'Public', '$2y$10$TuKDqGQ9taGteo8GoHHs7euITcXS.QesfcBa7vJBItuZht0r0mOHa', 'test@a.com', 5, '[]', 0);
+(12, 'łosoś', 'Katarzyna', 'Public', '$2y$10$TuKDqGQ9taGteo8GoHHs7euITcXS.QesfcBa7vJBItuZht0r0mOHa', 'test@a.com', 5, '[]', 0),
+(17, 'akow', 'Anna', 'Kowalska', '$2y$10$fj4.WPcDbhpRXvK/YfihZO6KRp2FX7SE4615/9TNqKWpf0B0wM6cC', 'example@gmail.com', 10, '{\"Cart\":{\"42\":1,\"44\":\"3\",\"41\":\"5\",\"43\":\"2\"}}', 0),
+(20, 'login', 'test', 'testowy', '$2y$10$8IOMPsUstqeToJNl4dd3M.ZAsIg1NeSxPN5pa5lP0O560nnw8OP8G', 'example@gmail.com', 13, '{\"Cart\":{\"41\":1,\"5\":1,\"44\":\"3\"}}', 0);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -297,7 +301,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT dla tabeli `adressess`
 --
 ALTER TABLE `adressess`
-  MODIFY `adress_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `adress_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT dla tabeli `categories`
@@ -339,13 +343,13 @@ ALTER TABLE `payment_methods`
 -- AUTO_INCREMENT dla tabeli `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT dla tabeli `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Ograniczenia dla zrzutów tabel
