@@ -25,6 +25,7 @@ $res = $conn->query($q1);
     <input type="submit" name="add_cat_name" value="Dodaj">
 
   </form>
+  <a href="add_product.php">Dodaj produkt</a>
 </section>
 
 <?php

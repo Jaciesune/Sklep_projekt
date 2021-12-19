@@ -36,6 +36,7 @@ include_once "components/nav.php";
         echo "</div>";
         echo "<p>Cena: " . substr($row->price, 0, 1) . " Kupon FICSIT</p>";
         echo "<p>Ilość w magazynie: " . $row->quantity . "</p>";
+        echo "<p>Opis: " . $row->description . "</p>";
       } else {
         echo "<div class='product-img-container'>";
         echo "<img src='$row->picture_path' alt='obrazek produktu'>";
@@ -50,6 +51,7 @@ include_once "components/nav.php";
         echo "</div>";
         echo "<div><p>Cena: " . $row->price . " zł</p>";
         echo "<p>Ilość w magazynie: " . $row->quantity . "</p></div>";
+        echo "<p>Opis: " . $row->description . "</p>";
       }
     }
     ?>

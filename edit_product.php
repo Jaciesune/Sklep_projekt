@@ -69,8 +69,6 @@ if (isset($_POST['edit'])) {
 }
 
 
-
-
 include_once "components/footer.php";
 include_once "components/foot.php";
 ?>
