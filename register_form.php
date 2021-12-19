@@ -35,7 +35,7 @@ include_once "components/nav.php";
       <input type="text" name="street_name" placeholder="Nr ulicy" id="st_nr">
       <input type="text" name="house_nr" placeholder="Numer domu" id="home_nr">
       <input type="text" name="apart_nr" placeholder="Numer mieszkania" id="apart_nr">
-      <a href="login_form.html">Masz już konto? Zaloguj się</a>
+      <a href="login_form.php">Masz już konto? Zaloguj się</a>
       <input type="submit" value="Zarejestruj" class="send">
     </form>
   </div>

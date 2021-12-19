@@ -7,4 +7,5 @@ if (isset($_SESSION["userID"])) {
   $query="UPDATE users SET data='{$json}' where user_id={$_SESSION["userID"]}";
   $res = $db->query($query);
 }
+$conn->close();
 ?>

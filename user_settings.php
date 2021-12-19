@@ -10,8 +10,6 @@ $q1 = "SELECT * FROM users INNER JOIN adressess ON users.adress=adressess.adress
 $res = $conn->query($q1);
 $user = $res->fetch_object();
 
-echo $q1;
-var_dump($user);
 ?>
 
 <main>

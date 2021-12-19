@@ -4,12 +4,12 @@ include_once "components/header.php";
 include_once "components/nav.php";
 $conn = connect();
 
-$q1 = "SELECT * FROM `products` INNER JOIN categories c USING(category_id) WHERE c.category_name = 'Telefony'";
+$q1 = "SELECT * FROM `products`";
 
 $res = $conn->query($q1);
 ?>
 
-<h1 class="subtitle">Smartfony</h1>
+<h1 class="subtitle">Wszystkie produkty</h1>
 
 <section class="product-list">
 <?php
@@ -24,6 +24,7 @@ $res = $conn->query($q1);
         }
       ?>
 </section>
+
 
 <?php
 include_once "components/footer.php";

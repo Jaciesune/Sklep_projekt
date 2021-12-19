@@ -10,28 +10,22 @@
 
   <section>
     <!-- Ikonki i linki -->
-    <a href="desktops.php"><span class="material-icons">
-        computer
-      </span>Komputery</a>
-    <a href="smartphones.php"><span class="material-icons">
-        smartphone
+    <a href="all_products.php"><span class="material-icons">
+        view_module
+      </span>Lista produktów</a>
+    <a href="products_by_category.php"><span class="material-icons">
+        category
       </span>
-      Telefony</a>
-    <a href="components.php"><span class="material-icons">
-        memory
+      Szukaj po kategorii
+    </a>
+    <a href="search.php"><span class="material-icons">
+        search
       </span>
-      Podzespoły</a>
-    <a href="perypherals.php"><span class="material-icons">
-        print
+      Szukaj</a>
+      <a href="management.php"><span class="material-icons">
+        construction
       </span>
-      Urządzenia peryferyjne</a>
-    <a href="audio.php"><span class="material-icons">
-        radio
-      </span>
-      Audio</a>
-    <a href="accessories.php"><span class="material-icons">
-        space_dashboard
-      </span>Akcesoria</a>
+      Management</a>
   </section>
 
 </nav>

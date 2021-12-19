@@ -16,6 +16,10 @@ if (isset($_POST['product'])) {
   }
 }
 
+if ($USER_DATA['CArt'] = []){
+  echo "<h1>Koszyk jest pusty</h1>";
+} else {
+
 ?>
 <section class="">
   <?php
@@ -55,5 +59,6 @@ if (isset($_POST['product'])) {
 </section>
 
 <?php
+}
 include_once "components/foot.php";
 ?>

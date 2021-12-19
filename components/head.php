@@ -1,5 +1,6 @@
 <?php 
 include_once "connect.php";
+$conn = connect();
 
 $USER_DATA=[];
 if (isset($_SESSION["userID"])) {

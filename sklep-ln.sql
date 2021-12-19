@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 07 Gru 2021, 21:33
+-- Czas generowania: 19 Gru 2021, 23:05
 -- Wersja serwera: 10.4.21-MariaDB
 -- Wersja PHP: 8.0.12
 
@@ -36,6 +36,17 @@ CREATE TABLE `adressess` (
   `house_number` text NOT NULL,
   `apartment_number` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `adressess`
+--
+
+INSERT INTO `adressess` (`adress_id`, `phone_number`, `wojewodztwo`, `city_name`, `street_number`, `house_number`, `apartment_number`) VALUES
+(1, 123456789, 'świętokrzyskie', 'Limanowa', '', '903', ''),
+(2, 123456789, 'pomorskie', 'łoszington', '', '1234', ''),
+(3, 132456789, 'dolnośląskie', 'Krk', '', '123', '123'),
+(4, 123456789, 'dolnośląskie', 'Limanowa', '', '123', '123'),
+(5, 987654321, 'zachodniopomorskie', 'łoszington', '', '1', '123');
 
 -- --------------------------------------------------------
 
@@ -143,7 +154,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `name`, `price`, `quantity`, `category_id`, `picture_path`, `description`) VALUES
-(1, 'Sok pomidorowy 0.5L', '2.99', 69, 13, './visualization/sok-pomidorowy.png', ''),
+(1, 'Sok <span style=\"text-decoration: line-through\">pomidorowy</span> pomarańczowy 0.5L', '2.99', 64, 13, './visualization/sok-pomidorowy.png', ''),
 (5, 'Dell Vostro 3888 MT i5-10400/8GB/256/Win10P', '2699.00', 15, 1, './visualization/komp_1.jpg', ''),
 (6, 'Acer Nitro 50 i5-11400F/16GB/512/W10 RTX3060', '5599.00', 6, 1, './visualization/komp_1.jpg', ''),
 (7, 'G4M3R 500 i5-10400F/16GB/1TB/RTX3060/W10X\r\n', '6650.00', 2, 1, './visualization/komp_1.jpg', ''),
@@ -180,10 +191,10 @@ INSERT INTO `products` (`product_id`, `name`, `price`, `quantity`, `category_id`
 (38, 'Kingston MobileLite Plus (SD) USB 3.2 gen.1', '42.00', 7, 12, './visualization/komp_1.jpg', ''),
 (39, 'Kingston 64GB microSDXC Canvas Select Plus 100MB/s', '43.00', 9, 12, './visualization/komp_1.jpg', ''),
 (40, 'Lenovo IdeaCentre Gaming 5 i5/16GB/512/Win10 GTX1660S', '4500.00', 13, 1, './visualization/komp_1.jpg', ''),
-(41, 'Pizza 4 sery - Duża', '32.00', 11, 13, './visualization/pizza-4-sery.png', ''),
-(42, 'Hamburger - MC Donlands', '12.00', 60, 13, './visualization/hamburger.jpg', ''),
-(43, 'Plakat \"Satisfactory Update 5\"', '1.00', 99999, 13, './visualization/poster-sati.webp', ''),
-(44, 'Kubek Satisfactory', '1.00', 999999, 13, './visualization/Cup.png', '');
+(41, 'Pizza 4 sery - Duża', '32.00', 6, 13, 'visualization/140d3ea2b0c7a720b8fcc236deedd04f.jpg', ''),
+(42, 'Hamburger - MC Donlands', '12.00', 50, 13, './visualization/hamburger.jpg', ''),
+(43, 'Plakat \"Satisfactory Update 5\"', '1.00', 99900, 13, './visualization/poster-sati.webp', ''),
+(44, 'Kubek Satisfactory', '1.00', 999900, 13, './visualization/Cup.png', '');
 
 -- --------------------------------------------------------
 
@@ -199,19 +210,24 @@ CREATE TABLE `users` (
   `password` varchar(256) NOT NULL,
   `e-mail` varchar(120) NOT NULL,
   `adress` int(11) NOT NULL,
-  `data` varchar(10000) NOT NULL
+  `data` varchar(10000) NOT NULL,
+  `role` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Zrzut danych tabeli `users`
 --
 
-INSERT INTO `users` (`user_id`, `username`, `name`, `family_name`, `password`, `e-mail`, `adress`, `data`) VALUES
-(1, 'kcpru', 'Kacper', 'Kaspersky', '1', 'mail_kacpra@window.love', 0, ''),
-(2, 'BadAt', 'Szymuś', 'Kasza', '2', 'batat@gnu.antarktyda', 0, ''),
-(5, 'janiemoge', 'Lukasz', 'Nowak', '$2y$10$aT4fq3/tdmvtGWI0xQxp5.vNVswuVK3YgULWtm8majO5bF7zmNB.O', 'kocham_misie@yebac.lacznosc', 0, ''),
-(6, 'spadło', 'abecadło', 'z pieca', '$2y$10$seeAJNXnkLebLHgu8RgOk.yoSR0DsifkRpVSzIj27bqmH9noIh08C', 'lubie@placki.com', 0, ''),
-(7, 're', 'kacper', 'ch', '$2y$10$jEPzM290DAjN02hfBp8XK.NhFoApMHskKCYSi3pQt3giRV3M10D9a', 'asjydfg@gmail.com', 0, '{\"Cart\":[\"42\",\"5\",null,\"1\",\"5\",\"1\",null,\"5\",\"5\",\"5\",\"5\",\"5\",\"5\"]}');
+INSERT INTO `users` (`user_id`, `username`, `name`, `family_name`, `password`, `e-mail`, `adress`, `data`, `role`) VALUES
+(1, 'kcpru', 'Kacper', 'Kaspersky', '1', 'mail_kacpra@window.love', 1, '', 0),
+(2, 'BadAt', 'Szymuś', 'Kasza', '2', 'batat@gnu.antarktyda', 1, '', 0),
+(5, 'janiemoge', 'Lukasz', 'Nowak', '$2y$10$aT4fq3/tdmvtGWI0xQxp5.vNVswuVK3YgULWtm8majO5bF7zmNB.O', 'kocham_misie@yebac.lacznosc', 1, '', 0),
+(6, 'spadło', 'abecadło', 'z pieca', '$2y$10$seeAJNXnkLebLHgu8RgOk.yoSR0DsifkRpVSzIj27bqmH9noIh08C', 'lubie@placki.com', 1, '', 0),
+(7, 're-ken', 'Kacper', 'Chojnowski', '$2y$10$jEPzM290DAjN02hfBp8XK.NhFoApMHskKCYSi3pQt3giRV3M10D9a', 'kjyhsfdgkSFDGULYOF@gmail.com', 7, '{\"Cart\":[]}', 0),
+(8, 'mortal123', 'Lukasz', 'Nowak', '$2y$10$QURFJkauXrP3feOh3jDqn.OWKm9iOFea6Fc62HIooVj8GmukBgDay', 'lubie@placki.com', 1, '', 0),
+(9, 'kook', 'konrad', 'ol', '$2y$10$gx5PAhwa9jCr2dMwMJQ35O.cvrvyaQOdTV0oszdXwrYbl/.skHgwy', 'alllellluja@gmail.com', 0, '{\"Cart\":{\"1\":\"5\"}}', 0),
+(10, 'admin', 'John', 'Cena', '$2y$10$Ppb/1p/VYAzE2GnLUix4U.ZG9wmtki0lxyofZYBfCbOtYdvtzRCEW', 'who.knows@gmail.com', 1, '[]', 1),
+(12, 'łosoś', 'Katarzyna', 'Public', '$2y$10$TuKDqGQ9taGteo8GoHHs7euITcXS.QesfcBa7vJBItuZht0r0mOHa', 'test@a.com', 5, '[]', 0);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -270,7 +286,8 @@ ALTER TABLE `products`
 -- Indeksy dla tabeli `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`user_id`),
+  ADD KEY `adress` (`adress`);
 
 --
 -- AUTO_INCREMENT dla zrzuconych tabel
@@ -280,13 +297,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT dla tabeli `adressess`
 --
 ALTER TABLE `adressess`
-  MODIFY `adress_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `adress_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT dla tabeli `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT dla tabeli `delivery_types`
@@ -322,13 +339,13 @@ ALTER TABLE `payment_methods`
 -- AUTO_INCREMENT dla tabeli `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT dla tabeli `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Ograniczenia dla zrzutów tabel

@@ -212,14 +212,15 @@ nav.open {
 }
 
 #addToCart {
-    width: 5rem;
     white-space: normal;
     word-wrap: break-word;
     height: 5rem;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     border: 0;
     background-color: #05445E;
     color: white;
+    width: 100%;
+    margin: 0 0.5rem;
 }
 
 img {
@@ -263,7 +264,7 @@ input[type="number"]:out-of-range {
     max-width: 60rem;
 }
 
-.product_cart button, .product_cart input {
+.product_cart button, .product_cart input, .golden_buzzer {
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -283,4 +284,24 @@ input[type="number"]:out-of-range {
 .cart_info {
     width: 20rem;
     text-align: center;
+}
+
+.golden_buzzer {
+    background-color: gold;
+    color: #05445E;
+    width: 100%;
+}
+
+.edit_product form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.list_categories form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
 }
