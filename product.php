@@ -28,9 +28,11 @@ include_once "components/nav.php";
         echo "<form action='./cart_form.php' method='POST'>";
         echo "<input type='hidden' name='product' value='$row->product_id'>";
         echo "<input type='submit' value='Dodaj do koszyka' id='addToCart'>";
-        if ($_SESSION['admin']) {
-          echo "<a href='edit_product.php?id=$row->product_id' class='golden_buzzer'>Edytuj</a>";
-          echo "<a href='del_product.php?id=$row->product_id' class='golden_buzzer'>Usuń</a>";
+        if (isset($_SESSION['userID'])) {
+          if ($_SESSION['admin']) {
+            echo "<a href='edit_product.php?id=$row->product_id' class='golden_buzzer'>Edytuj</a>";
+            echo "<a href='del_product.php?id=$row->product_id' class='golden_buzzer'>Usuń</a>";
+          }
         }
         echo "</form>";
         echo "</div>";
@@ -43,9 +45,11 @@ include_once "components/nav.php";
         echo "<form action='./cart_form.php' method='POST'>";
         echo "<input type='hidden' name='product' value='$row->product_id'>";
         echo "<input type='submit' value='Dodaj do koszyka' id='addToCart'>";
-        if ($_SESSION['admin']) {
-          echo "<a href='edit_product.php?id=$row->product_id' class='golden_buzzer'>Edytuj</a>";
-          echo "<a href='del_product.php?id=$row->product_id' class='golden_buzzer'>Usuń</a>";
+        if (isset($_SESSION['userID'])) {
+          if ($_SESSION['admin']) {
+            echo "<a href='edit_product.php?id=$row->product_id' class='golden_buzzer'>Edytuj</a>";
+            echo "<a href='del_product.php?id=$row->product_id' class='golden_buzzer'>Usuń</a>";
+          }
         }
         echo "</form>";
         echo "</div>";
